@@ -147,13 +147,17 @@ class MemoryInfo
  public:
   static size_t Usage(void)
   {
-    unsigned long rss, vs, psize;
+#if TARGET_OS_IOS
+      return 0;
+#else
+    unsigned long rss, vs;
     task_t task = MACH_PORT_NULL;
 
     if (task_for_pid(current_task(), getpid(), &task) != KERN_SUCCESS)
         abort();
     getres(task, &rss, &vs);
     return rss;
+#endif
   }
 
 };

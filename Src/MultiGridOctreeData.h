@@ -54,7 +54,9 @@ DAMAGE.
 #define MAX_MEMORY_GB 0
 
 #include <unordered_map>
+#if !TARGET_OS_IOS
 #include <omp.h>
+#endif
 #include "BSplineData.h"
 #include "PointStream.h"
 #include "Geometry.h"
