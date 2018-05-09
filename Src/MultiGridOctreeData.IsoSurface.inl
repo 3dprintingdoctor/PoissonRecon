@@ -344,7 +344,7 @@ void Octree< Real >::_setSliceIsoVertices( const BSplineData< ColorDegree , BTyp
 							if( stillOwner )
 							{
 								// We only need to pass the iso-vertex down if the edge it lies on is adjacent to a coarser leaf
-								bool isNeeded;
+								bool isNeeded = false;
 								switch( o )
 								{
 								case 0: isNeeded = ( !_isValidSpaceNode( neighborKey.neighbors[ _localToGlobal( depth ) ].neighbors[1][2*y][1] ) || !_isValidSpaceNode( neighborKey.neighbors[ _localToGlobal( depth ) ].neighbors[1][2*y][2*z] ) || !_isValidSpaceNode( neighborKey.neighbors[ _localToGlobal( depth ) ].neighbors[1][1][2*z] ) ) ; break;
@@ -496,7 +496,7 @@ void Octree< Real >::_copyFinerSliceIsoEdgeKeys( LocalDepth depth , int slice , 
 				if( !pSliceValues.edgeSet[ pIndex ] )
 				{
 					int ce = Cube::EdgeIndex( orientation , y , z );
-					int c1 , c2;
+					int c1 = 0, c2 = 0;
 					switch( orientation )
 					{
 					case 0: c1 = Cube::CornerIndex( 0 , y , z ) , c2 = Cube::CornerIndex( 1 , y , z ) ; break;
@@ -909,7 +909,7 @@ bool Octree< Real >::_getIsoVertex( const BSplineData< ColorDegree , BType >* co
 		break;
 	}
 
-	double averageRoot;
+	double averageRoot = 0;
 	bool rootFound = false;
 	if( nonLinearFit )
 	{
@@ -981,7 +981,7 @@ bool Octree< Real >::_getIsoVertex( const BSplineData< ColorDegree , BType >* co
 	position[0] = s[0] + width*x;
 	position[1] = s[1] + width*y;
 
-	double averageRoot;
+	double averageRoot = 0;
 
 	bool rootFound = false;
 	if( nonLinearFit )

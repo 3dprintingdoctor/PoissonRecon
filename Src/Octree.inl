@@ -267,7 +267,7 @@ template< class NodeData >
 int OctNode< NodeData >::maxDepth(void) const{
 	if(!children){return 0;}
 	else{
-		int c,d;
+		int c = 0, d = 0;
 		for(int i=0;i<Cube::CORNERS;i++){
 			d=children[i].maxDepth();
 			if(!i || d>c){c=d;}

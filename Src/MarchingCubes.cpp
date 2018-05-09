@@ -79,7 +79,7 @@ void Square::EdgeCorners(int idx,int& c1,int& c2){
 }
 int Square::ReflectEdgeIndex(int idx,int edgeIndex){
 	int orientation=edgeIndex%2;
-	int o,i;
+	int o = 0, i = 0;
 	FactorEdgeIndex(idx,o,i);
 	if(o!=orientation){return idx;}
 	else{return EdgeIndex(o,(i+1)%2);}
@@ -160,7 +160,7 @@ bool Cube::IsFaceCorner( int cIndex , int f )
 
 int Cube::FaceAdjacentToEdges( int eIndex1 , int eIndex2 )
 {
-	int f1,f2,g1,g2;
+	int f1 = 0, f2 = 0, g1 = 0, g2 = 0;
 	FacesAdjacentToEdge(eIndex1,f1,f2);
 	FacesAdjacentToEdge(eIndex2,g1,g2);
 	if(f1==g1 || f1==g2){return f1;}

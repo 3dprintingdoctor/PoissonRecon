@@ -200,7 +200,7 @@ void SortedTreeNodes::setSliceTableData( SliceTableData& sData , int depth , int
 			int ac = Square::AntipodalCornerIndex( Square::CornerIndex( y , z ) );
 			for( int cc=0 ; cc<Square::CORNERS ; cc++ )
 			{
-				int ii , jj , xx , yy , zz;
+				int ii , jj , xx = 0, yy = 0, zz = 0;
 				Square::FactorCornerIndex( cc , ii , jj );
 				ii += y , jj += z;
 				switch( o )
@@ -217,7 +217,7 @@ void SortedTreeNodes::setSliceTableData( SliceTableData& sData , int depth , int
 				// Set all edge indices
 				for( int cc=0 ; cc<Square::CORNERS ; cc++ )
 				{
-					int ii , jj , aii , ajj , xx , yy , zz;
+					int ii , jj , aii , ajj , xx = 0, yy = 0, zz = 0;
 					Square::FactorCornerIndex( cc , ii , jj );
 					Square::FactorCornerIndex( Square::AntipodalCornerIndex( cc ) , aii , ajj );
 					ii += y , jj += z;
