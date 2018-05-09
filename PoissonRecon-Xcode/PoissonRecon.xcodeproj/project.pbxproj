@@ -1,0 +1,652 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7691CAEF20927C200029084C /* PoissonRecon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7691CAE520927C200029084C /* PoissonRecon.framework */; };
+		7691CAF420927C200029084C /* PoissonReconTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7691CAF320927C200029084C /* PoissonReconTests.m */; };
+		7691CAF620927C200029084C /* PoissonRecon.h in Headers */ = {isa = PBXBuildFile; fileRef = 7691CAE820927C200029084C /* PoissonRecon.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7691CB1220927E6B0029084C /* PoissonReconOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 7691CB1020927E6B0029084C /* PoissonReconOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7691CB1320927E6B0029084C /* PoissonReconOperation.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7691CB1120927E6B0029084C /* PoissonReconOperation.mm */; };
+		76EBE52920A25B870052126A /* MAT.inl in Resources */ = {isa = PBXBuildFile; fileRef = 76EBE4FD20A25B870052126A /* MAT.inl */; };
+		76EBE52A20A25B870052126A /* SparseMatrix.h in Headers */ = {isa = PBXBuildFile; fileRef = 76EBE4FE20A25B870052126A /* SparseMatrix.h */; };
+		76EBE52B20A25B870052126A /* PlyFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 76EBE4FF20A25B870052126A /* PlyFile.cpp */; };
+		76EBE52C20A25B870052126A /* Octree.inl in Resources */ = {isa = PBXBuildFile; fileRef = 76EBE50020A25B870052126A /* Octree.inl */; };
+		76EBE52D20A25B870052126A /* Geometry.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 76EBE50120A25B870052126A /* Geometry.cpp */; };
+		76EBE52E20A25B870052126A /* MemoryUsage.h in Headers */ = {isa = PBXBuildFile; fileRef = 76EBE50220A25B870052126A /* MemoryUsage.h */; };
+		76EBE53020A25B870052126A /* Ply.h in Headers */ = {isa = PBXBuildFile; fileRef = 76EBE50420A25B870052126A /* Ply.h */; };
+		76EBE53120A25B870052126A /* MarchingCubes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 76EBE50520A25B870052126A /* MarchingCubes.cpp */; };
+		76EBE53220A25B870052126A /* PointStream.inl in Resources */ = {isa = PBXBuildFile; fileRef = 76EBE50620A25B870052126A /* PointStream.inl */; };
+		76EBE53320A25B870052126A /* MultiGridOctreeData.System.inl in Resources */ = {isa = PBXBuildFile; fileRef = 76EBE50720A25B870052126A /* MultiGridOctreeData.System.inl */; };
+		76EBE53420A25B870052126A /* PPolynomial.inl in Resources */ = {isa = PBXBuildFile; fileRef = 76EBE50820A25B870052126A /* PPolynomial.inl */; };
+		76EBE53520A25B870052126A /* BSplineData.h in Headers */ = {isa = PBXBuildFile; fileRef = 76EBE50920A25B870052126A /* BSplineData.h */; };
+		76EBE53620A25B870052126A /* Array.inl in Resources */ = {isa = PBXBuildFile; fileRef = 76EBE50A20A25B870052126A /* Array.inl */; };
+		76EBE53720A25B870052126A /* MAT.h in Headers */ = {isa = PBXBuildFile; fileRef = 76EBE50B20A25B870052126A /* MAT.h */; };
+		76EBE53820A25B870052126A /* MultiGridOctreeData.WeightedSamples.inl in Resources */ = {isa = PBXBuildFile; fileRef = 76EBE50C20A25B870052126A /* MultiGridOctreeData.WeightedSamples.inl */; };
+		76EBE53920A25B870052126A /* MarchingCubes.h in Headers */ = {isa = PBXBuildFile; fileRef = 76EBE50D20A25B870052126A /* MarchingCubes.h */; };
+		76EBE53A20A25B870052126A /* CmdLineParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 76EBE50E20A25B870052126A /* CmdLineParser.h */; };
+		76EBE53B20A25B870052126A /* Polynomial.h in Headers */ = {isa = PBXBuildFile; fileRef = 76EBE50F20A25B870052126A /* Polynomial.h */; };
+		76EBE53C20A25B870052126A /* CmdLineParser.inl in Resources */ = {isa = PBXBuildFile; fileRef = 76EBE51020A25B870052126A /* CmdLineParser.inl */; };
+		76EBE53D20A25B870052126A /* MultiGridOctreeData.inl in Resources */ = {isa = PBXBuildFile; fileRef = 76EBE51120A25B870052126A /* MultiGridOctreeData.inl */; };
+		76EBE53E20A25B870052126A /* Octree.h in Headers */ = {isa = PBXBuildFile; fileRef = 76EBE51220A25B870052126A /* Octree.h */; };
+		76EBE53F20A25B870052126A /* MyTime.h in Headers */ = {isa = PBXBuildFile; fileRef = 76EBE51320A25B870052126A /* MyTime.h */; };
+		76EBE54020A25B870052126A /* Polynomial.inl in Resources */ = {isa = PBXBuildFile; fileRef = 76EBE51420A25B870052126A /* Polynomial.inl */; };
+		76EBE54120A25B870052126A /* FunctionData.inl in Resources */ = {isa = PBXBuildFile; fileRef = 76EBE51520A25B870052126A /* FunctionData.inl */; };
+		76EBE54220A25B870052126A /* MultiGridOctreeData.IsoSurface.inl in Resources */ = {isa = PBXBuildFile; fileRef = 76EBE51620A25B870052126A /* MultiGridOctreeData.IsoSurface.inl */; };
+		76EBE54420A25B870052126A /* MultiGridOctreeData.Evaluation.inl in Resources */ = {isa = PBXBuildFile; fileRef = 76EBE51820A25B870052126A /* MultiGridOctreeData.Evaluation.inl */; };
+		76EBE54520A25B870052126A /* Factor.h in Headers */ = {isa = PBXBuildFile; fileRef = 76EBE51920A25B870052126A /* Factor.h */; };
+		76EBE54620A25B870052126A /* MultiGridOctreeData.SortedTreeNodes.inl in Resources */ = {isa = PBXBuildFile; fileRef = 76EBE51A20A25B870052126A /* MultiGridOctreeData.SortedTreeNodes.inl */; };
+		76EBE54820A25B870052126A /* CmdLineParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 76EBE51C20A25B870052126A /* CmdLineParser.cpp */; };
+		76EBE54920A25B870052126A /* Allocator.h in Headers */ = {isa = PBXBuildFile; fileRef = 76EBE51D20A25B870052126A /* Allocator.h */; };
+		76EBE54A20A25B870052126A /* PPolynomial.h in Headers */ = {isa = PBXBuildFile; fileRef = 76EBE51E20A25B870052126A /* PPolynomial.h */; };
+		76EBE54B20A25B870052126A /* Array.h in Headers */ = {isa = PBXBuildFile; fileRef = 76EBE51F20A25B870052126A /* Array.h */; };
+		76EBE54C20A25B870052126A /* MultiGridOctreeData.h in Headers */ = {isa = PBXBuildFile; fileRef = 76EBE52020A25B870052126A /* MultiGridOctreeData.h */; };
+		76EBE54D20A25B870052126A /* BSplineData.inl in Resources */ = {isa = PBXBuildFile; fileRef = 76EBE52120A25B870052126A /* BSplineData.inl */; };
+		76EBE54E20A25B870052126A /* Geometry.inl in Resources */ = {isa = PBXBuildFile; fileRef = 76EBE52220A25B870052126A /* Geometry.inl */; };
+		76EBE54F20A25B870052126A /* Factor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 76EBE52320A25B870052126A /* Factor.cpp */; };
+		76EBE55020A25B870052126A /* BinaryNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 76EBE52420A25B870052126A /* BinaryNode.h */; };
+		76EBE55120A25B870052126A /* SparseMatrix.inl in Resources */ = {isa = PBXBuildFile; fileRef = 76EBE52520A25B870052126A /* SparseMatrix.inl */; };
+		76EBE55220A25B870052126A /* PointStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 76EBE52620A25B870052126A /* PointStream.h */; };
+		76EBE55320A25B870052126A /* FunctionData.h in Headers */ = {isa = PBXBuildFile; fileRef = 76EBE52720A25B870052126A /* FunctionData.h */; };
+		76EBE55420A25B870052126A /* Geometry.h in Headers */ = {isa = PBXBuildFile; fileRef = 76EBE52820A25B870052126A /* Geometry.h */; };
+		76EBE55D20A2769C0052126A /* app_scan.ply in Resources */ = {isa = PBXBuildFile; fileRef = 76EBE55C20A2769C0052126A /* app_scan.ply */; };
+		76EBE56020A2798F0052126A /* PoissonReconExecute.h in Headers */ = {isa = PBXBuildFile; fileRef = 76EBE55E20A2798F0052126A /* PoissonReconExecute.h */; };
+		76EBE56120A2798F0052126A /* PoissonReconExecute.mm in Sources */ = {isa = PBXBuildFile; fileRef = 76EBE55F20A2798F0052126A /* PoissonReconExecute.mm */; };
+		76F402CF20A285DF002FE190 /* app_scan.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 76F402CE20A285DF002FE190 /* app_scan.jpg */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7691CAF020927C200029084C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7691CADC20927C200029084C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7691CAE420927C200029084C;
+			remoteInfo = PoissonRecon;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7691CAE520927C200029084C /* PoissonRecon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PoissonRecon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7691CAE820927C200029084C /* PoissonRecon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PoissonRecon.h; sourceTree = "<group>"; };
+		7691CAE920927C200029084C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7691CAEE20927C200029084C /* PoissonReconTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PoissonReconTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7691CAF320927C200029084C /* PoissonReconTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PoissonReconTests.m; sourceTree = "<group>"; };
+		7691CAF520927C200029084C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7691CB1020927E6B0029084C /* PoissonReconOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PoissonReconOperation.h; sourceTree = "<group>"; };
+		7691CB1120927E6B0029084C /* PoissonReconOperation.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = PoissonReconOperation.mm; sourceTree = "<group>"; };
+		76EBE4FD20A25B870052126A /* MAT.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MAT.inl; sourceTree = "<group>"; };
+		76EBE4FE20A25B870052126A /* SparseMatrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SparseMatrix.h; sourceTree = "<group>"; };
+		76EBE4FF20A25B870052126A /* PlyFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PlyFile.cpp; sourceTree = "<group>"; };
+		76EBE50020A25B870052126A /* Octree.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Octree.inl; sourceTree = "<group>"; };
+		76EBE50120A25B870052126A /* Geometry.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Geometry.cpp; sourceTree = "<group>"; };
+		76EBE50220A25B870052126A /* MemoryUsage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemoryUsage.h; sourceTree = "<group>"; };
+		76EBE50420A25B870052126A /* Ply.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ply.h; sourceTree = "<group>"; };
+		76EBE50520A25B870052126A /* MarchingCubes.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MarchingCubes.cpp; sourceTree = "<group>"; };
+		76EBE50620A25B870052126A /* PointStream.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PointStream.inl; sourceTree = "<group>"; };
+		76EBE50720A25B870052126A /* MultiGridOctreeData.System.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MultiGridOctreeData.System.inl; sourceTree = "<group>"; };
+		76EBE50820A25B870052126A /* PPolynomial.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PPolynomial.inl; sourceTree = "<group>"; };
+		76EBE50920A25B870052126A /* BSplineData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSplineData.h; sourceTree = "<group>"; };
+		76EBE50A20A25B870052126A /* Array.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Array.inl; sourceTree = "<group>"; };
+		76EBE50B20A25B870052126A /* MAT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAT.h; sourceTree = "<group>"; };
+		76EBE50C20A25B870052126A /* MultiGridOctreeData.WeightedSamples.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MultiGridOctreeData.WeightedSamples.inl; sourceTree = "<group>"; };
+		76EBE50D20A25B870052126A /* MarchingCubes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarchingCubes.h; sourceTree = "<group>"; };
+		76EBE50E20A25B870052126A /* CmdLineParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CmdLineParser.h; sourceTree = "<group>"; };
+		76EBE50F20A25B870052126A /* Polynomial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Polynomial.h; sourceTree = "<group>"; };
+		76EBE51020A25B870052126A /* CmdLineParser.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CmdLineParser.inl; sourceTree = "<group>"; };
+		76EBE51120A25B870052126A /* MultiGridOctreeData.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MultiGridOctreeData.inl; sourceTree = "<group>"; };
+		76EBE51220A25B870052126A /* Octree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Octree.h; sourceTree = "<group>"; };
+		76EBE51320A25B870052126A /* MyTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTime.h; sourceTree = "<group>"; };
+		76EBE51420A25B870052126A /* Polynomial.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Polynomial.inl; sourceTree = "<group>"; };
+		76EBE51520A25B870052126A /* FunctionData.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FunctionData.inl; sourceTree = "<group>"; };
+		76EBE51620A25B870052126A /* MultiGridOctreeData.IsoSurface.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MultiGridOctreeData.IsoSurface.inl; sourceTree = "<group>"; };
+		76EBE51820A25B870052126A /* MultiGridOctreeData.Evaluation.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MultiGridOctreeData.Evaluation.inl; sourceTree = "<group>"; };
+		76EBE51920A25B870052126A /* Factor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Factor.h; sourceTree = "<group>"; };
+		76EBE51A20A25B870052126A /* MultiGridOctreeData.SortedTreeNodes.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MultiGridOctreeData.SortedTreeNodes.inl; sourceTree = "<group>"; };
+		76EBE51C20A25B870052126A /* CmdLineParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CmdLineParser.cpp; sourceTree = "<group>"; };
+		76EBE51D20A25B870052126A /* Allocator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Allocator.h; sourceTree = "<group>"; };
+		76EBE51E20A25B870052126A /* PPolynomial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPolynomial.h; sourceTree = "<group>"; };
+		76EBE51F20A25B870052126A /* Array.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Array.h; sourceTree = "<group>"; };
+		76EBE52020A25B870052126A /* MultiGridOctreeData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiGridOctreeData.h; sourceTree = "<group>"; };
+		76EBE52120A25B870052126A /* BSplineData.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BSplineData.inl; sourceTree = "<group>"; };
+		76EBE52220A25B870052126A /* Geometry.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Geometry.inl; sourceTree = "<group>"; };
+		76EBE52320A25B870052126A /* Factor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Factor.cpp; sourceTree = "<group>"; };
+		76EBE52420A25B870052126A /* BinaryNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BinaryNode.h; sourceTree = "<group>"; };
+		76EBE52520A25B870052126A /* SparseMatrix.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SparseMatrix.inl; sourceTree = "<group>"; };
+		76EBE52620A25B870052126A /* PointStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PointStream.h; sourceTree = "<group>"; };
+		76EBE52720A25B870052126A /* FunctionData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FunctionData.h; sourceTree = "<group>"; };
+		76EBE52820A25B870052126A /* Geometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Geometry.h; sourceTree = "<group>"; };
+		76EBE55C20A2769C0052126A /* app_scan.ply */ = {isa = PBXFileReference; lastKnownFileType = file; path = app_scan.ply; sourceTree = "<group>"; };
+		76EBE55E20A2798F0052126A /* PoissonReconExecute.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PoissonReconExecute.h; sourceTree = "<group>"; };
+		76EBE55F20A2798F0052126A /* PoissonReconExecute.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = PoissonReconExecute.mm; sourceTree = "<group>"; };
+		76F402CE20A285DF002FE190 /* app_scan.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = app_scan.jpg; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7691CAE120927C200029084C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7691CAEB20927C200029084C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7691CAEF20927C200029084C /* PoissonRecon.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7691CADB20927C200029084C = {
+			isa = PBXGroup;
+			children = (
+				76EBE4FC20A25B870052126A /* Src */,
+				7691CAE720927C200029084C /* PoissonRecon */,
+				7691CAF220927C200029084C /* PoissonReconTests */,
+				7691CAE620927C200029084C /* Products */,
+				76EBE55520A2611E0052126A /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		7691CAE620927C200029084C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7691CAE520927C200029084C /* PoissonRecon.framework */,
+				7691CAEE20927C200029084C /* PoissonReconTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7691CAE720927C200029084C /* PoissonRecon */ = {
+			isa = PBXGroup;
+			children = (
+				7691CAE820927C200029084C /* PoissonRecon.h */,
+				7691CAE920927C200029084C /* Info.plist */,
+				7691CB1020927E6B0029084C /* PoissonReconOperation.h */,
+				7691CB1120927E6B0029084C /* PoissonReconOperation.mm */,
+				76EBE55E20A2798F0052126A /* PoissonReconExecute.h */,
+				76EBE55F20A2798F0052126A /* PoissonReconExecute.mm */,
+			);
+			path = PoissonRecon;
+			sourceTree = "<group>";
+		};
+		7691CAF220927C200029084C /* PoissonReconTests */ = {
+			isa = PBXGroup;
+			children = (
+				76EBE55C20A2769C0052126A /* app_scan.ply */,
+				76F402CE20A285DF002FE190 /* app_scan.jpg */,
+				7691CAF320927C200029084C /* PoissonReconTests.m */,
+				7691CAF520927C200029084C /* Info.plist */,
+			);
+			path = PoissonReconTests;
+			sourceTree = "<group>";
+		};
+		76EBE4FC20A25B870052126A /* Src */ = {
+			isa = PBXGroup;
+			children = (
+				76EBE51D20A25B870052126A /* Allocator.h */,
+				76EBE51F20A25B870052126A /* Array.h */,
+				76EBE50A20A25B870052126A /* Array.inl */,
+				76EBE52420A25B870052126A /* BinaryNode.h */,
+				76EBE50920A25B870052126A /* BSplineData.h */,
+				76EBE52120A25B870052126A /* BSplineData.inl */,
+				76EBE51C20A25B870052126A /* CmdLineParser.cpp */,
+				76EBE50E20A25B870052126A /* CmdLineParser.h */,
+				76EBE51020A25B870052126A /* CmdLineParser.inl */,
+				76EBE52320A25B870052126A /* Factor.cpp */,
+				76EBE51920A25B870052126A /* Factor.h */,
+				76EBE52720A25B870052126A /* FunctionData.h */,
+				76EBE51520A25B870052126A /* FunctionData.inl */,
+				76EBE50120A25B870052126A /* Geometry.cpp */,
+				76EBE52820A25B870052126A /* Geometry.h */,
+				76EBE52220A25B870052126A /* Geometry.inl */,
+				76EBE50520A25B870052126A /* MarchingCubes.cpp */,
+				76EBE50D20A25B870052126A /* MarchingCubes.h */,
+				76EBE50B20A25B870052126A /* MAT.h */,
+				76EBE4FD20A25B870052126A /* MAT.inl */,
+				76EBE50220A25B870052126A /* MemoryUsage.h */,
+				76EBE51820A25B870052126A /* MultiGridOctreeData.Evaluation.inl */,
+				76EBE52020A25B870052126A /* MultiGridOctreeData.h */,
+				76EBE51120A25B870052126A /* MultiGridOctreeData.inl */,
+				76EBE51620A25B870052126A /* MultiGridOctreeData.IsoSurface.inl */,
+				76EBE51A20A25B870052126A /* MultiGridOctreeData.SortedTreeNodes.inl */,
+				76EBE50720A25B870052126A /* MultiGridOctreeData.System.inl */,
+				76EBE50C20A25B870052126A /* MultiGridOctreeData.WeightedSamples.inl */,
+				76EBE51320A25B870052126A /* MyTime.h */,
+				76EBE51220A25B870052126A /* Octree.h */,
+				76EBE50020A25B870052126A /* Octree.inl */,
+				76EBE50420A25B870052126A /* Ply.h */,
+				76EBE4FF20A25B870052126A /* PlyFile.cpp */,
+				76EBE52620A25B870052126A /* PointStream.h */,
+				76EBE50620A25B870052126A /* PointStream.inl */,
+				76EBE50F20A25B870052126A /* Polynomial.h */,
+				76EBE51420A25B870052126A /* Polynomial.inl */,
+				76EBE51E20A25B870052126A /* PPolynomial.h */,
+				76EBE50820A25B870052126A /* PPolynomial.inl */,
+				76EBE4FE20A25B870052126A /* SparseMatrix.h */,
+				76EBE52520A25B870052126A /* SparseMatrix.inl */,
+			);
+			name = Src;
+			path = ../Src;
+			sourceTree = "<group>";
+		};
+		76EBE55520A2611E0052126A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		7691CAE220927C200029084C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				76EBE56020A2798F0052126A /* PoissonReconExecute.h in Headers */,
+				76EBE53920A25B870052126A /* MarchingCubes.h in Headers */,
+				76EBE54C20A25B870052126A /* MultiGridOctreeData.h in Headers */,
+				7691CB1220927E6B0029084C /* PoissonReconOperation.h in Headers */,
+				76EBE52E20A25B870052126A /* MemoryUsage.h in Headers */,
+				76EBE55320A25B870052126A /* FunctionData.h in Headers */,
+				76EBE55220A25B870052126A /* PointStream.h in Headers */,
+				76EBE54520A25B870052126A /* Factor.h in Headers */,
+				76EBE53F20A25B870052126A /* MyTime.h in Headers */,
+				76EBE53520A25B870052126A /* BSplineData.h in Headers */,
+				76EBE54920A25B870052126A /* Allocator.h in Headers */,
+				76EBE53720A25B870052126A /* MAT.h in Headers */,
+				76EBE53020A25B870052126A /* Ply.h in Headers */,
+				7691CAF620927C200029084C /* PoissonRecon.h in Headers */,
+				76EBE55020A25B870052126A /* BinaryNode.h in Headers */,
+				76EBE53E20A25B870052126A /* Octree.h in Headers */,
+				76EBE52A20A25B870052126A /* SparseMatrix.h in Headers */,
+				76EBE54B20A25B870052126A /* Array.h in Headers */,
+				76EBE53B20A25B870052126A /* Polynomial.h in Headers */,
+				76EBE53A20A25B870052126A /* CmdLineParser.h in Headers */,
+				76EBE54A20A25B870052126A /* PPolynomial.h in Headers */,
+				76EBE55420A25B870052126A /* Geometry.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		7691CAE420927C200029084C /* PoissonRecon */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7691CAF920927C200029084C /* Build configuration list for PBXNativeTarget "PoissonRecon" */;
+			buildPhases = (
+				7691CAE020927C200029084C /* Sources */,
+				7691CAE120927C200029084C /* Frameworks */,
+				7691CAE220927C200029084C /* Headers */,
+				7691CAE320927C200029084C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PoissonRecon;
+			productName = PoissonRecon;
+			productReference = 7691CAE520927C200029084C /* PoissonRecon.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		7691CAED20927C200029084C /* PoissonReconTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7691CAFC20927C200029084C /* Build configuration list for PBXNativeTarget "PoissonReconTests" */;
+			buildPhases = (
+				7691CAEA20927C200029084C /* Sources */,
+				7691CAEB20927C200029084C /* Frameworks */,
+				7691CAEC20927C200029084C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7691CAF120927C200029084C /* PBXTargetDependency */,
+			);
+			name = PoissonReconTests;
+			productName = PoissonReconTests;
+			productReference = 7691CAEE20927C200029084C /* PoissonReconTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7691CADC20927C200029084C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = "Standard Cyborg";
+				TargetAttributes = {
+					7691CAE420927C200029084C = {
+						CreatedOnToolsVersion = 9.3;
+					};
+					7691CAED20927C200029084C = {
+						CreatedOnToolsVersion = 9.3;
+					};
+				};
+			};
+			buildConfigurationList = 7691CADF20927C200029084C /* Build configuration list for PBXProject "PoissonRecon" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7691CADB20927C200029084C;
+			productRefGroup = 7691CAE620927C200029084C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7691CAE420927C200029084C /* PoissonRecon */,
+				7691CAED20927C200029084C /* PoissonReconTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7691CAE320927C200029084C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				76EBE52920A25B870052126A /* MAT.inl in Resources */,
+				76EBE54D20A25B870052126A /* BSplineData.inl in Resources */,
+				76EBE54620A25B870052126A /* MultiGridOctreeData.SortedTreeNodes.inl in Resources */,
+				76EBE53220A25B870052126A /* PointStream.inl in Resources */,
+				76EBE53420A25B870052126A /* PPolynomial.inl in Resources */,
+				76EBE54020A25B870052126A /* Polynomial.inl in Resources */,
+				76EBE53C20A25B870052126A /* CmdLineParser.inl in Resources */,
+				76EBE54120A25B870052126A /* FunctionData.inl in Resources */,
+				76EBE53820A25B870052126A /* MultiGridOctreeData.WeightedSamples.inl in Resources */,
+				76EBE54E20A25B870052126A /* Geometry.inl in Resources */,
+				76EBE53D20A25B870052126A /* MultiGridOctreeData.inl in Resources */,
+				76EBE52C20A25B870052126A /* Octree.inl in Resources */,
+				76EBE53320A25B870052126A /* MultiGridOctreeData.System.inl in Resources */,
+				76EBE54420A25B870052126A /* MultiGridOctreeData.Evaluation.inl in Resources */,
+				76EBE54220A25B870052126A /* MultiGridOctreeData.IsoSurface.inl in Resources */,
+				76EBE53620A25B870052126A /* Array.inl in Resources */,
+				76EBE55120A25B870052126A /* SparseMatrix.inl in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7691CAEC20927C200029084C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				76F402CF20A285DF002FE190 /* app_scan.jpg in Resources */,
+				76EBE55D20A2769C0052126A /* app_scan.ply in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7691CAE020927C200029084C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				76EBE53120A25B870052126A /* MarchingCubes.cpp in Sources */,
+				76EBE54820A25B870052126A /* CmdLineParser.cpp in Sources */,
+				7691CB1320927E6B0029084C /* PoissonReconOperation.mm in Sources */,
+				76EBE52D20A25B870052126A /* Geometry.cpp in Sources */,
+				76EBE56120A2798F0052126A /* PoissonReconExecute.mm in Sources */,
+				76EBE52B20A25B870052126A /* PlyFile.cpp in Sources */,
+				76EBE54F20A25B870052126A /* Factor.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7691CAEA20927C200029084C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7691CAF420927C200029084C /* PoissonReconTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7691CAF120927C200029084C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7691CAE420927C200029084C /* PoissonRecon */;
+			targetProxy = 7691CAF020927C200029084C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		7691CAF720927C200029084C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COMPILER_INDEX_STORE_ENABLE = NO;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		7691CAF820927C200029084C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COMPILER_INDEX_STORE_ENABLE = NO;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		7691CAFA20927C200029084C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_WARN_COMMA = NO;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = KAW83335BG;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = PoissonRecon/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.standardcyborg.PoissonRecon;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7691CAFB20927C200029084C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_WARN_COMMA = NO;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = KAW83335BG;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = PoissonRecon/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.standardcyborg.PoissonRecon;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		7691CAFD20927C200029084C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KAW83335BG;
+				INFOPLIST_FILE = PoissonReconTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.standardcyborg.PoissonReconTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7691CAFE20927C200029084C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KAW83335BG;
+				INFOPLIST_FILE = PoissonReconTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.standardcyborg.PoissonReconTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7691CADF20927C200029084C /* Build configuration list for PBXProject "PoissonRecon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7691CAF720927C200029084C /* Debug */,
+				7691CAF820927C200029084C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7691CAF920927C200029084C /* Build configuration list for PBXNativeTarget "PoissonRecon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7691CAFA20927C200029084C /* Debug */,
+				7691CAFB20927C200029084C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7691CAFC20927C200029084C /* Build configuration list for PBXNativeTarget "PoissonReconTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7691CAFD20927C200029084C /* Debug */,
+				7691CAFE20927C200029084C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7691CADC20927C200029084C /* Project object */;
+}
