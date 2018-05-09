@@ -41,6 +41,13 @@
 <A HREF="http://www.cs.jhu.edu/~misha/Code/PoissonRecon/Version1/">V1</A>
 </UL>
 <HR>
+<A NAME="BUILDING"><B>BUILDING</B></A>
+Use the provided <PRE>Makefile</PRE> to build.<BR>
+To build on macOS, you may need to install a version of LLVM that includes OpenMP support, which is not included with Xcode by default.
+<PRE>brew install llvm --universal<BR>make CC=gcc-7 CXX=g++-7</PRE>
+To build as a framework on iOS, use the Xcodeproj in <PRE>PoissonRecon-Xcode</PRE>.<BR>
+To update the Podspec, run <PRE>pod repo push StandardCyborg PoissonRecon.podspec --allow-warnings</PRE><BR>
+<HR>
 <A NAME="EXECUTABLES"><B>EXECUTABLES</B></A><BR>
 <UL>
 <DL>
