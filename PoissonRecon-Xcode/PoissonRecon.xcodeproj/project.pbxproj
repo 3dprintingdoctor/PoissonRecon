@@ -28,9 +28,7 @@
 		76EBE53720A25B870052126A /* MAT.h in Headers */ = {isa = PBXBuildFile; fileRef = 76EBE50B20A25B870052126A /* MAT.h */; };
 		76EBE53820A25B870052126A /* MultiGridOctreeData.WeightedSamples.inl in Resources */ = {isa = PBXBuildFile; fileRef = 76EBE50C20A25B870052126A /* MultiGridOctreeData.WeightedSamples.inl */; };
 		76EBE53920A25B870052126A /* MarchingCubes.h in Headers */ = {isa = PBXBuildFile; fileRef = 76EBE50D20A25B870052126A /* MarchingCubes.h */; };
-		76EBE53A20A25B870052126A /* CmdLineParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 76EBE50E20A25B870052126A /* CmdLineParser.h */; };
 		76EBE53B20A25B870052126A /* Polynomial.h in Headers */ = {isa = PBXBuildFile; fileRef = 76EBE50F20A25B870052126A /* Polynomial.h */; };
-		76EBE53C20A25B870052126A /* CmdLineParser.inl in Resources */ = {isa = PBXBuildFile; fileRef = 76EBE51020A25B870052126A /* CmdLineParser.inl */; };
 		76EBE53D20A25B870052126A /* MultiGridOctreeData.inl in Resources */ = {isa = PBXBuildFile; fileRef = 76EBE51120A25B870052126A /* MultiGridOctreeData.inl */; };
 		76EBE53E20A25B870052126A /* Octree.h in Headers */ = {isa = PBXBuildFile; fileRef = 76EBE51220A25B870052126A /* Octree.h */; };
 		76EBE53F20A25B870052126A /* MyTime.h in Headers */ = {isa = PBXBuildFile; fileRef = 76EBE51320A25B870052126A /* MyTime.h */; };
@@ -40,7 +38,6 @@
 		76EBE54420A25B870052126A /* MultiGridOctreeData.Evaluation.inl in Resources */ = {isa = PBXBuildFile; fileRef = 76EBE51820A25B870052126A /* MultiGridOctreeData.Evaluation.inl */; };
 		76EBE54520A25B870052126A /* Factor.h in Headers */ = {isa = PBXBuildFile; fileRef = 76EBE51920A25B870052126A /* Factor.h */; };
 		76EBE54620A25B870052126A /* MultiGridOctreeData.SortedTreeNodes.inl in Resources */ = {isa = PBXBuildFile; fileRef = 76EBE51A20A25B870052126A /* MultiGridOctreeData.SortedTreeNodes.inl */; };
-		76EBE54820A25B870052126A /* CmdLineParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 76EBE51C20A25B870052126A /* CmdLineParser.cpp */; };
 		76EBE54920A25B870052126A /* Allocator.h in Headers */ = {isa = PBXBuildFile; fileRef = 76EBE51D20A25B870052126A /* Allocator.h */; };
 		76EBE54A20A25B870052126A /* PPolynomial.h in Headers */ = {isa = PBXBuildFile; fileRef = 76EBE51E20A25B870052126A /* PPolynomial.h */; };
 		76EBE54B20A25B870052126A /* Array.h in Headers */ = {isa = PBXBuildFile; fileRef = 76EBE51F20A25B870052126A /* Array.h */; };
@@ -94,9 +91,7 @@
 		76EBE50B20A25B870052126A /* MAT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAT.h; sourceTree = "<group>"; };
 		76EBE50C20A25B870052126A /* MultiGridOctreeData.WeightedSamples.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MultiGridOctreeData.WeightedSamples.inl; sourceTree = "<group>"; };
 		76EBE50D20A25B870052126A /* MarchingCubes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarchingCubes.h; sourceTree = "<group>"; };
-		76EBE50E20A25B870052126A /* CmdLineParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CmdLineParser.h; sourceTree = "<group>"; };
 		76EBE50F20A25B870052126A /* Polynomial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Polynomial.h; sourceTree = "<group>"; };
-		76EBE51020A25B870052126A /* CmdLineParser.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CmdLineParser.inl; sourceTree = "<group>"; };
 		76EBE51120A25B870052126A /* MultiGridOctreeData.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MultiGridOctreeData.inl; sourceTree = "<group>"; };
 		76EBE51220A25B870052126A /* Octree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Octree.h; sourceTree = "<group>"; };
 		76EBE51320A25B870052126A /* MyTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTime.h; sourceTree = "<group>"; };
@@ -106,7 +101,6 @@
 		76EBE51820A25B870052126A /* MultiGridOctreeData.Evaluation.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MultiGridOctreeData.Evaluation.inl; sourceTree = "<group>"; };
 		76EBE51920A25B870052126A /* Factor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Factor.h; sourceTree = "<group>"; };
 		76EBE51A20A25B870052126A /* MultiGridOctreeData.SortedTreeNodes.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MultiGridOctreeData.SortedTreeNodes.inl; sourceTree = "<group>"; };
-		76EBE51C20A25B870052126A /* CmdLineParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CmdLineParser.cpp; sourceTree = "<group>"; };
 		76EBE51D20A25B870052126A /* Allocator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Allocator.h; sourceTree = "<group>"; };
 		76EBE51E20A25B870052126A /* PPolynomial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPolynomial.h; sourceTree = "<group>"; };
 		76EBE51F20A25B870052126A /* Array.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Array.h; sourceTree = "<group>"; };
@@ -197,9 +191,6 @@
 				76EBE52420A25B870052126A /* BinaryNode.h */,
 				76EBE50920A25B870052126A /* BSplineData.h */,
 				76EBE52120A25B870052126A /* BSplineData.inl */,
-				76EBE51C20A25B870052126A /* CmdLineParser.cpp */,
-				76EBE50E20A25B870052126A /* CmdLineParser.h */,
-				76EBE51020A25B870052126A /* CmdLineParser.inl */,
 				76EBE52320A25B870052126A /* Factor.cpp */,
 				76EBE51920A25B870052126A /* Factor.h */,
 				76EBE52720A25B870052126A /* FunctionData.h */,
@@ -270,7 +261,6 @@
 				76EBE52A20A25B870052126A /* SparseMatrix.h in Headers */,
 				76EBE54B20A25B870052126A /* Array.h in Headers */,
 				76EBE53B20A25B870052126A /* Polynomial.h in Headers */,
-				76EBE53A20A25B870052126A /* CmdLineParser.h in Headers */,
 				76EBE54A20A25B870052126A /* PPolynomial.h in Headers */,
 				76EBE55420A25B870052126A /* Geometry.h in Headers */,
 			);
@@ -363,7 +353,6 @@
 				76EBE53220A25B870052126A /* PointStream.inl in Resources */,
 				76EBE53420A25B870052126A /* PPolynomial.inl in Resources */,
 				76EBE54020A25B870052126A /* Polynomial.inl in Resources */,
-				76EBE53C20A25B870052126A /* CmdLineParser.inl in Resources */,
 				76EBE54120A25B870052126A /* FunctionData.inl in Resources */,
 				76EBE53820A25B870052126A /* MultiGridOctreeData.WeightedSamples.inl in Resources */,
 				76EBE54E20A25B870052126A /* Geometry.inl in Resources */,
@@ -394,7 +383,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				76EBE53120A25B870052126A /* MarchingCubes.cpp in Sources */,
-				76EBE54820A25B870052126A /* CmdLineParser.cpp in Sources */,
 				7691CB1320927E6B0029084C /* PoissonReconOperation.mm in Sources */,
 				76EBE52D20A25B870052126A /* Geometry.cpp in Sources */,
 				76EBE56120A2798F0052126A /* PoissonReconExecute.mm in Sources */,
