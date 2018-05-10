@@ -83,7 +83,7 @@ template<class Real, class Vertex>
 int _Execute(NSString *inputFilePath, NSString *outputFilePath)
 {
     const int   AdaptiveExponent = 1;
-    const bool  ASCII = false;
+    const bool  ASCII = true;
     const BoundaryType BoundType = BOUNDARY_NEUMANN;
     const int   CGDepth = 0;
     const float CGSolverAccuracy = 1e-3f;
@@ -131,11 +131,11 @@ int _Execute(NSString *inputFilePath, NSString *outputFilePath)
     Real pointWeightSum = 0;
     std::vector<typename Octree<Real>::PointSample> *samples = new std::vector<typename Octree<Real>::PointSample>();
     std::vector<ProjectiveData<Point3D<Real>, Real>> *sampleData = NULL;
-    DensityEstimator *density = NULL;
+    DensityEstimator *densityEstimator = NULL;
     SparseNodeData<Point3D<Real>, NORMAL_DEGREE> *normalInfo = NULL;
     Real targetValue = (Real)0.5;
-    XForm4x4<Real> xForm = XForm4x4<Real>::Identity();
-    XForm4x4<Real> iXForm = xForm.inverse();
+    XForm4x4<Real> transform = XForm4x4<Real>::Identity();
+    XForm4x4<Real> inverseTransform = transform.inverse();
     
     // Read in the samples (and color data)
     {
@@ -173,19 +173,19 @@ int _Execute(NSString *inputFilePath, NSString *outputFilePath)
             }
         }
         
-        XPointStream _pointStream(xForm, *pointStream);
-        xForm = GetPointXForm(_pointStream, (Real)Scale) *xForm;
+        XPointStream _pointStream(transform, *pointStream);
+        transform = GetPointXForm(_pointStream, (Real)Scale) * transform;
         if (sampleData)
         {
-            XPointStreamWithData _pointStream(xForm, (PointStreamWithData &)*pointStream);
+            XPointStreamWithData _pointStream(transform, (PointStreamWithData &)*pointStream);
             pointCount = tree.template init<Point3D<Real>>(_pointStream, Depth, Confidence, *samples, sampleData);
         }
         else
         {
-            XPointStream _pointStream(xForm, *pointStream);
+            XPointStream _pointStream(transform, *pointStream);
             pointCount = tree.template init<Point3D<Real>>(_pointStream, Depth, Confidence, *samples, sampleData);
         }
-        iXForm = xForm.inverse();
+        inverseTransform = transform.inverse();
         delete pointStream;
 #pragma omp parallel for num_threads(Threads)
         for (int i = 0; i < (int)samples->size(); i++)
@@ -200,23 +200,23 @@ int _Execute(NSString *inputFilePath, NSString *outputFilePath)
     
     {
         DenseNodeData<Real, Degree> constraints;
-        InterpolationInfo *iInfo = NULL;
+        InterpolationInfo *interpolationInfo = NULL;
         int solveDepth = MaxSolveDepth;
         
         tree.resetNodeIndices();
         
         // Get the kernel density estimator [If discarding, compute anew. Otherwise, compute once.]
         {
-            density = tree.template setDensityEstimator<WEIGHT_DEGREE>(*samples, KernelDepth, SamplesPerNode);
+            densityEstimator = tree.template setDensityEstimator<WEIGHT_DEGREE>(*samples, KernelDepth, SamplesPerNode);
         }
         
         // Transform the Hermite samples into a vector field [If discarding, compute anew. Otherwise, compute once.]
         {
             normalInfo = new SparseNodeData<Point3D<Real>, NORMAL_DEGREE>();
-            *normalInfo = tree.template setNormalField<NORMAL_DEGREE>(*samples, *density, pointWeightSum, true);
+            *normalInfo = tree.template setNormalField<NORMAL_DEGREE>(*samples, *densityEstimator, pointWeightSum, true);
         }
         
-        if (!Density) { delete density; density = NULL; }
+        if (!Density) { delete densityEstimator; densityEstimator = NULL; }
         
         // Trim the tree and prepare for multigrid
         {
@@ -226,7 +226,7 @@ int _Execute(NSString *inputFilePath, NSString *outputFilePath)
             tree.template inalizeForBroodedMultigrid<MAX_DEGREE, Degree, BoundType>(FullDepth, typename Octree<Real>::template HasNormalDataFunctor<NORMAL_DEGREE>(*normalInfo), &indexMap);
             
             if (normalInfo) { normalInfo->remapIndices(indexMap); }
-            if (density) { density->remapIndices(indexMap); }
+            if (densityEstimator) { densityEstimator->remapIndices(indexMap); }
         }
         
         // Add the FEM constraints
@@ -237,13 +237,13 @@ int _Execute(NSString *inputFilePath, NSString *outputFilePath)
         }
         
         // Free up the normal info [If we don't need it for subseequent iterations.]
-        delete normalInfo, normalInfo = NULL;
+        if (normalInfo) { delete normalInfo; normalInfo = NULL; }
         
         // Add the interpolation constraints
         if (PointWeight > 0)
         {
-            iInfo = new InterpolationInfo(tree, *samples, targetValue, AdaptiveExponent, (Real)PointWeight * pointWeightSum, (Real)0);
-            tree.template addInterpolationConstraints<Degree, BoundType>(*iInfo, constraints, solveDepth);
+            interpolationInfo = new InterpolationInfo(tree, *samples, targetValue, AdaptiveExponent, (Real)PointWeight * pointWeightSum, (Real)0);
+            tree.template addInterpolationConstraints<Degree, BoundType>(*interpolationInfo, constraints, solveDepth);
         }
         
         NSLog(@"Leaf Nodes / Active Nodes / Ghost Nodes: %d / %d / %d\n", (int)tree.leaves(), (int)tree.nodes(), (int)tree.ghostNodes());
@@ -261,9 +261,9 @@ int _Execute(NSString *inputFilePath, NSString *outputFilePath)
             solverInfo.verbose = Verbose;
             solverInfo.showResidual = ShowResidual;
             solverInfo.lowResIterMultiplier = std::max<double>(1.0, LowResIterMultiplier);
-            solution = tree.template solveSystem<Degree, BoundType>(FEMSystemFunctor<Degree, BoundType>(0, 1, 0), iInfo, constraints, solveDepth, solverInfo);
+            solution = tree.template solveSystem<Degree, BoundType>(FEMSystemFunctor<Degree, BoundType>(0, 1, 0), interpolationInfo, constraints, solveDepth, solverInfo);
             
-            if (iInfo) { delete iInfo; iInfo = NULL; }
+            if (interpolationInfo) { delete interpolationInfo; interpolationInfo = NULL; }
         }
     }
     
@@ -305,40 +305,39 @@ int _Execute(NSString *inputFilePath, NSString *outputFilePath)
     }
     
     SparseNodeData<ProjectiveData<Point3D<Real>, Real>, DATA_DEGREE> *colorData = NULL;
+    
     if (sampleData)
     {
         colorData = new SparseNodeData<ProjectiveData<Point3D<Real>, Real>, DATA_DEGREE>();
-        *colorData = tree.template setDataField<DATA_DEGREE, false>(*samples, *sampleData, (DensityEstimator*)NULL);
-        delete sampleData, sampleData = NULL;
+        *colorData = tree.template setDataField<DATA_DEGREE, false>(*samples, *sampleData, (DensityEstimator *)NULL);
+        delete sampleData;
+        sampleData = NULL;
         
         for (const OctNode<TreeNodeData> *n = tree.tree().nextNode(); n; n = tree.tree().nextNode(n))
         {
-            ProjectiveData<Point3D<Real>, Real> *clr = (*colorData)(n);
-            if (clr)
+            ProjectiveData<Point3D<Real>, Real> *color = (*colorData)(n);
+            if (color)
             {
-                (*clr) *= (Real)pow(Color, tree.depth(n));
+                (*color) *= (Real)pow(Color, tree.depth(n));
             }
         }
     }
     
-    if (sampleData)
-    {
-        tree.template getMCIsoSurface<Degree, BoundType, WEIGHT_DEGREE, DATA_DEGREE>(density, colorData, solution, isoValue, mesh, !LinearFit, !NonManifold, PolygonMesh);
-    }
+    tree.template getMCIsoSurface<Degree, BoundType, WEIGHT_DEGREE, DATA_DEGREE>(densityEstimator, colorData, solution, isoValue, mesh, !LinearFit, !NonManifold, PolygonMesh);
     
     NSLog(@"Vertices / Polygons: %d / %d\n", mesh.outOfCorePointCount() + (int)mesh.inCorePoints.size(), mesh.polygonCount());
     if (colorData) { delete colorData, colorData = NULL; }
     
     if (ASCII)
     {
-        PlyWritePolygons((char *)Out, &mesh, PLY_ASCII, NULL, 0, iXForm);
+        PlyWritePolygons((char *)Out, &mesh, PLY_ASCII, NULL, 0, inverseTransform);
     }
     else
     {
-        PlyWritePolygons((char *)Out, &mesh, PLY_BINARY_NATIVE, NULL, 0, iXForm);
+        PlyWritePolygons((char *)Out, &mesh, PLY_BINARY_NATIVE, NULL, 0, inverseTransform);
     }
     
-    if (density) { delete density; density = NULL; }
+    if (densityEstimator) { delete densityEstimator; densityEstimator = NULL; }
     NSLog(@"Total Solve: %9.1f (s), %9.1f (MB)\n", Time() - startTime, tree.maxMemoryUsage());
     
     return 1;
